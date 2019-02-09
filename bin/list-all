@@ -2,5 +2,5 @@
 curl -s https://services.gradle.org/distributions/ \
     | grep -e  "distributions.*-bin.zip\"" \
     | sed -e "s#^.*distributions/gradle-##" -e "s#-bin.zip.*##" \
-    | tac \
+    | perl -e 'print reverse<>' \
     | paste -s -d " " -
